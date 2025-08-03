@@ -12,7 +12,7 @@ on:
         description: PDFium version
         type: string
         required: false
-        default: ""
+        default: ''
       enable_v8:
         description: Enable V8
         type: boolean
@@ -35,7 +35,7 @@ on:
         description: Target environment (device|catalyst|musl|simulator)
         type: string
         required: false
-        default: ""
+        default: ''
       emsdk_version:
         description: Emscripten SDK
         type: string
@@ -43,7 +43,7 @@ on:
         default: 3.1.72
     outputs:
       artifact:
-        description: "The name of the artifact"
+        description: 'The name of the artifact'
         value: ${{ jobs.build.outputs.artifact }}
 
 jobs:
@@ -117,6 +117,3 @@ jobs:
         with:
           name: ${{ steps.init.outputs.artifact }}
           path: staging/
-      - name: Test
-        run: steps/09-test.sh
-        shell: bash

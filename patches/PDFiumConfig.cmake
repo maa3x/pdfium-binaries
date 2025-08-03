@@ -25,7 +25,7 @@ if(WIN32)
         PATH_SUFFIXES "bin")
 
   find_file(PDFium_IMPLIB
-        NAMES "pdfium.dll.lib"
+        NAMES "pdfium.lib"
         PATHS "${CMAKE_CURRENT_LIST_DIR}"
         PATH_SUFFIXES "lib")
 
