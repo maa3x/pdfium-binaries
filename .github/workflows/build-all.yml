@@ -11,7 +11,7 @@ on:
       version:
         description: PDFium version
         required: false
-        default: ""
+        default: ''
       enable_v8:
         description: Enable V8
         type: boolean
