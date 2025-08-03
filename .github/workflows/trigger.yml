@@ -1,7 +1,6 @@
 name: Weekly schedule
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
