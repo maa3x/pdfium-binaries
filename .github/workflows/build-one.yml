@@ -29,13 +29,12 @@ on:
           - arm64
           - x64
           - x86
-          - wasm
       target_environment:
         description: Target environment
         type: choice
-        default: ''
+        default: ""
         options:
-          - ''
+          - ""
           - device
           - catalyst
           - musl
