@@ -1,6 +1,7 @@
 name: Build all
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       branch:
@@ -25,7 +26,7 @@ on:
         description: Publish GitHub release
         type: boolean
         required: false
-        default: false
+        default: true
 
 jobs:
   android_arm:
