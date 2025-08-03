@@ -35,7 +35,7 @@ on:
         description: Target environment (device|catalyst|musl|simulator)
         type: string
         required: false
-        default: ''
+        default: ""
       emsdk_version:
         description: Emscripten SDK
         type: string
@@ -76,7 +76,6 @@ jobs:
           PDFium_ENABLE_V8=${{ inputs.enable_v8 }}
           PDFium_VERSION=${{ inputs.version }}
           EMSDK_VERSION=${{ inputs.emsdk_version }}
-          MUSL_URL=${{ secrets.MUSL_URL }}
           END
           steps/00-environment.sh
         shell: bash

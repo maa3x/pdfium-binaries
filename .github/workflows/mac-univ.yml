@@ -14,7 +14,6 @@ on:
         description: "The name of the artifact"
         value: ${{ jobs.build.outputs.artifact }}
 
-
 jobs:
   build:
     runs-on: macos-latest
@@ -39,11 +38,11 @@ jobs:
         run: |
           cp -r ${{ inputs.artifact_arm64 }} ${{ steps.init.outputs.artifact }}
           sed -i '' '/target_cpu/d' ${{ steps.init.outputs.artifact }}/args.gn
-          rm ${{ steps.init.outputs.artifact }}/lib/libpdfium.dylib
+          rm ${{ steps.init.outputs.artifact }}/lib/libpdfium.a
           lipo -create \
-            ${{ inputs.artifact_arm64 }}/lib/libpdfium.dylib \
-            ${{ inputs.artifact_x64 }}/lib/libpdfium.dylib \
-            -output ${{ steps.init.outputs.artifact }}/lib/libpdfium.dylib
+            ${{ inputs.artifact_arm64 }}/lib/libpdfium.a \
+            ${{ inputs.artifact_x64 }}/lib/libpdfium.a \
+            -output ${{ steps.init.outputs.artifact }}/lib/libpdfium.a
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

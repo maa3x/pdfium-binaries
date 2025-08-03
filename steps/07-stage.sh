@@ -31,7 +31,7 @@ rm -f "$STAGING/include/PRESUBMIT.py"
 
 case "$OS" in
   android|linux)
-    mv "$BUILD/libpdfium.so" "$STAGING_LIB"
+    mv "$BUILD/libpdfium.a" "$STAGING_LIB"
     ;;
 
   mac|ios)
@@ -49,7 +49,7 @@ case "$OS" in
   win)
     mv "$BUILD/pdfium.dll.lib" "$STAGING_LIB"
     mkdir -p "$STAGING_BIN"
-    mv "$BUILD/pdfium.dll" "$STAGING_BIN"
+    mv "$BUILD/pdfium.lib" "$STAGING_BIN"
     [ "$IS_DEBUG" == "true" ] && mv "$BUILD/pdfium.dll.pdb" "$STAGING_BIN"
     ;;
 esac

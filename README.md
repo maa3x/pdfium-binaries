@@ -8,8 +8,6 @@
 [![Total downloads](https://img.shields.io/github/downloads/bblanchon/pdfium-binaries/total)](https://github.com/bblanchon/pdfium-binaries/releases/)
 
 [![Latest release](https://img.shields.io/github/v/release/bblanchon/pdfium-binaries?display_name=release&label=github)](https://github.com/bblanchon/pdfium-binaries/releases/latest/)
-[![Nuget](https://img.shields.io/nuget/v/bblanchon.PDFium)](https://www.nuget.org/packages/bblanchon.PDFium/)
-[![Conda](https://img.shields.io/conda/v/bblanchon/pdfium-binaries?label=conda)](https://anaconda.org/bblanchon/pdfium-binaries)
 
 
 This project hosts pre-compiled binaries of the [PDFium library](https://pdfium.googlesource.com/pdfium/), an open-source library for PDF manipulation and rendering.
@@ -170,65 +168,6 @@ Here are the download links for latest release:
 
 See the [Releases page](https://github.com/bblanchon/pdfium-binaries/releases) to download older versions of PDFium.
 
-### NuGet Packages
-
-The following NuGet packages are available:
-
-<table>
-  <tr>
-    <th>OS</th>
-    <th>PDFium</th>
-    <th>PDFium V8</th>
-  </tr>
-
-  <tr>
-    <td>All (meta package)</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium/">bblanchon.PDFium</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8/">bblanchon.PDFiumV8</a></td>
-  </tr>
-
-  <tr>
-    <td>Android</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.Android/">bblanchon.PDFium.Android</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8.Android/">bblanchon.PDFiumV8.Android</a></td>
-  </tr>
-
-  <tr>
-    <td>iOS</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.iOS/">bblanchon.PDFium.iOS</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8.iOS/">bblanchon.PDFiumV8.iOS</a></td>
-  </tr>
-
-  <tr>
-    <td>Linux</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.Linux/">bblanchon.PDFium.Linux</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8.Linux/">bblanchon.PDFiumV8.Linux</a></td>
-  </tr>
-
-  <tr>
-    <td>macOS</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.macOS/">bblanchon.PDFium.macOS</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8.macOS/">bblanchon.PDFiumV8.macOS</a></td>
-  </tr>
-
-  <tr>
-    <td>Windows</td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.Win32/">bblanchon.PDFium.Win32</a></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFiumV8.Win32/">bblanchon.PDFiumV8.Win32</a></td>
-  </tr>
-
-  <tr>
-    <td>WebAssembly<sup>1</sup></td>
-    <td><a href="https://www.nuget.org/packages/bblanchon.PDFium.WebAssembly/">bblanchon.PDFium.WebAssembly</a></td>
-    <td>not supported</td>
-  </tr>
-</table>
-
-<small>1: WebAssembly build is experimental; please [provide feedback](https://github.com/bblanchon/pdfium-binaries/issues/28).</small>
-
-**HELP WANTED!**  
-I can provide packages for your favorite package manager, but I need help from someone who knows the format. Contact me via [GitHub issues](https://github.com/bblanchon/pdfium-binaries/issues) if you want to help.
-
 ## Documentation
 
 ### PDFium API documentation
@@ -247,7 +186,7 @@ Please find the [documentation of the PDFium API on developers.foxit.com](https:
 
         target_link_libraries(my_exe pdfium)
 
-5. On Windows, make sure that `pdfium.dll` can be found by your executable (copy it on the same folder, or put it on the `PATH`).
+5. On Windows, make sure that `pdfium.lib` can be found by your executable (copy it on the same folder, or put it on the `PATH`).
 
 
 ## Related projects
@@ -272,7 +211,7 @@ The following projects use (or recommend using) our PDFium builds:
 | [Spacedrive][spacedrive] | Rust/TS  | Cross-platform file manager, powered by a virtual distributed filesystem                                    |
 | [wxPDFView][wxpdfview]   | C++      | wxWidgets components to display PDF content                                                                 |
 
-*Did we miss a project? Please open a PR!*  
+*Did we miss a project? Please open a PR!*
 
 
 ## Contributors

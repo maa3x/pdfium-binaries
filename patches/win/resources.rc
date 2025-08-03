@@ -10,7 +10,7 @@ BEGIN
             VALUE "FileDescription",  "PDFium (compiled by github.com/bblanchon)"
             VALUE "FileVersion",      "$VERSION"
             VALUE "InternalName",     "pdfium"
-            VALUE "OriginalFilename", "pdfium.dll"
+            VALUE "OriginalFilename", "pdfium.lib"
             VALUE "ProductName",      "pdfium"
             VALUE "ProductVersion",   "$VERSION"
             VALUE "LegalCopyright",   "Copyright $YEAR PDFium Authors. All rights reserved."

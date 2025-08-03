@@ -12,7 +12,8 @@ mkdir -p "$BUILD"
 
 (
   echo "is_debug = $IS_DEBUG"
-  echo "pdf_is_standalone = true"
+  echo "pdf_is_standalone = false"
+  echo "pdf_is_complete_lib = true"
   echo "pdf_use_partition_alloc = false"
   echo "target_cpu = \"$TARGET_CPU\""
   echo "target_os = \"$OS\""

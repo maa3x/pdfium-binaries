@@ -20,7 +20,7 @@ set(PDFium_VERSION "#VERSION#")
 
 if(WIN32)
   find_file(PDFium_LIBRARY
-        NAMES "pdfium.dll"
+        NAMES "pdfium.lib"
         PATHS "${CMAKE_CURRENT_LIST_DIR}"
         PATH_SUFFIXES "bin")
 
