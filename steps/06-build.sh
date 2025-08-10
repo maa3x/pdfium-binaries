@@ -4,8 +4,13 @@ SOURCE=${PDFium_SOURCE_DIR:-pdfium}
 BUILD_DIR=${PDFium_BUILD_DIR:-$SOURCE/out}
 TARGET_CPU=${PDFium_TARGET_CPU:?}
 IS_DEBUG=${PDFium_IS_DEBUG:-false}
+OS=${PDFium_TARGET_OS:?}
 
+if [ "$OS" == "ios" ]; then
+ninja -C "$BUILD_DIR" pdfium
+else
 ninja -C "$BUILD_DIR" pdfium_all
+fi
 
 if [ "$TARGET_CPU" == "wasm" ]; then
   LIBPDFIUMA="$BUILD_DIR/obj/libpdfium.a"
