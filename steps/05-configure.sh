@@ -42,7 +42,7 @@ mkdir -p "$BUILD"
       echo "ios_enable_code_signing = false"
       echo "swift_keep_intermediate_files = true"
       echo "swift_whole_module_optimization = true"
-      # echo "use_blink = true"
+      echo "use_blink = true"
       [ "$ENABLE_V8" == "true" ] && [ "$TARGET_CPU" == "arm64" ] && echo 'arm_control_flow_integrity = "none"'
       echo "clang_use_chrome_plugins = false"
       ;;
