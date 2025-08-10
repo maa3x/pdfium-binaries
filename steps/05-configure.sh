@@ -11,16 +11,21 @@ IS_DEBUG=${PDFium_IS_DEBUG:-false}
 mkdir -p "$BUILD"
 
 (
+  echo "is_component_build = false"
+  echo "enable_stripping = true"
+  echo "exclude_unwind_tables = true"
+  echo "is_clang = true"
   echo "is_debug = $IS_DEBUG"
-  echo "pdf_is_standalone = false"
-  echo "pdf_is_complete_lib = true"
-  echo "pdf_use_partition_alloc = false"
-  echo "target_cpu = \"$TARGET_CPU\""
-  echo "target_os = \"$OS\""
   echo "pdf_enable_v8 = $ENABLE_V8"
   echo "pdf_enable_xfa = $ENABLE_V8"
+  echo "pdf_is_complete_lib = true"
+  echo "pdf_is_standalone = false"
+  echo "pdf_use_partition_alloc = false"
+  echo "strip_debug_info"
+  echo "symbol_level = 2"
+  echo "target_cpu = \"$TARGET_CPU\""
+  echo "target_os = \"$OS\""
   echo "treat_warnings_as_errors = false"
-  echo "is_component_build = false"
 
   if [ "$ENABLE_V8" == "true" ]; then
     echo "v8_use_external_startup_data = false"
@@ -35,7 +40,9 @@ mkdir -p "$BUILD"
     ios)
       [ -n "$TARGET_ENVIRONMENT" ] && echo "target_environment = \"$TARGET_ENVIRONMENT\""
       echo "ios_enable_code_signing = false"
-      echo "use_blink = true"
+      echo "swift_keep_intermediate_files = true"
+      echo "swift_whole_module_optimization = true"
+      # echo "use_blink = true"
       [ "$ENABLE_V8" == "true" ] && [ "$TARGET_CPU" == "arm64" ] && echo 'arm_control_flow_integrity = "none"'
       echo "clang_use_chrome_plugins = false"
       ;;
@@ -43,13 +50,19 @@ mkdir -p "$BUILD"
       echo "clang_use_chrome_plugins = false"
       ;;
     mac)
-      echo 'mac_deployment_target = "11.0.0"'
+      echo 'mac_deployment_target = "15.0.0"'
       echo "clang_use_chrome_plugins = false"
+      echo "is_clang = true"
+      echo "use_custom_libcxx = false"
+      echo "use_custom_libcxx_for_host = false"
+      echo "swift_keep_intermediate_files = true"
+      echo "swift_whole_module_optimization = true"
       ;;
     emscripten)
       echo 'pdf_is_complete_lib = true'
       echo 'is_clang = false'
       echo 'use_custom_libcxx = false'
+      echo 'is_high_end_android = false'
       if [ "$ENABLE_V8" == "true" ]; then
         # Set a toolchain with the same bitness as the target CPU
         echo "v8_snapshot_toolchain = \"//build/toolchain/linux:x86\""

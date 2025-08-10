@@ -5,7 +5,7 @@ BUILD_DIR=${PDFium_BUILD_DIR:-$SOURCE/out}
 TARGET_CPU=${PDFium_TARGET_CPU:?}
 IS_DEBUG=${PDFium_IS_DEBUG:-false}
 
-ninja -C "$BUILD_DIR" pdfium
+ninja -C "$BUILD_DIR" pdfium_all
 
 if [ "$TARGET_CPU" == "wasm" ]; then
   LIBPDFIUMA="$BUILD_DIR/obj/libpdfium.a"
